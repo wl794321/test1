@@ -1,0 +1,15 @@
+export JAVA_HOME=/usr/local/java
+export JRE_HOME=${JAVA_HOME}/jre 
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=$PATH:${JAVA_HOME}/bin:{JRE_HOME}/bin:$PATH
+
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'lxh' WITH GRANT OPTION;
+
+
+/opt/cloudera-manager/cm-5.10.0/share/cmf/schema/scm_prepare_database.sh mysql -hmaster -uroot -pwl794321 --scm-host master scmdbn scmdbu scmdbp
+
+
+[mysqld]
+wait_timeout=31536000
+interactive_timeout=31536000
